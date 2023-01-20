@@ -4,14 +4,15 @@
   "description": "Projeto backend sistema Ecommerce",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev ./src/index.ts",
+    "start": "tsc && node ./build/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CarolineMartins09/Lab_E_Commerce.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Caroline Martins",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CarolineMartins09/Lab_E_Commerce/issues"

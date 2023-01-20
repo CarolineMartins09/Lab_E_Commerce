@@ -1,15 +1,17 @@
 GET http://localhost:3003/ping
 
 ###
-POST http://localhost:3003/user/create
+POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name": "teste 1",
-    "email":"teste@example.com",
-    "password": "123456"
+    "name": "teste 4",
+    "email":"teste2@example.com",
+    "password": "1234567"
 }
 
 ###
+
+
 
 

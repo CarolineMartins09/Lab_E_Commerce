@@ -1,0 +1,35 @@
+{
+  "name": "lab_e_commerce",
+  "version": "1.0.0",
+  "description": "Projeto backend sistema Ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarolineMartins09/Lab_E_Commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarolineMartins09/Lab_E_Commerce/issues"
+  },
+  "homepage": "https://github.com/CarolineMartins09/Lab_E_Commerce#readme",
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "knex": "^2.4.1",
+    "mysql": "^2.18.1",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/knex": "^0.16.1",
+    "cors": "^2.8.5",
+    "ts-node-dev": "^2.0.0"
+  }
+}

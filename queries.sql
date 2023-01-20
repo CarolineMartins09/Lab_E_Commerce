@@ -1,4 +1,4 @@
--- Active: 1674084192186@@35.226.146.116@3306
+-- Active: 1674084192186@@35.226.146.116@3306@jbl-4416152-caroline-martins
 CREATE TABLE labecommerce_users(
     id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,

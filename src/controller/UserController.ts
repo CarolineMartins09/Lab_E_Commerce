@@ -7,10 +7,11 @@ export class UserController {
 
         const userBusiness = new UserBusiness()
 
-        await userBusiness.createUser({name, email, password})
-
+       const user= await userBusiness.createUser({name, email, password})
+            console.log(user);
+            
             res.status(200).send("User created successfully!")
         }catch(err:any){
-            res.status(400).send(err.message)
+            res.status(400).send(`${err.message}"aqui "`)
     }
 }}

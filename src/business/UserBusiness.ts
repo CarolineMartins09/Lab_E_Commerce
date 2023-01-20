@@ -2,7 +2,8 @@ import { UserDatabase } from "../data/UserDatabase"
 
 export class UserBusiness{
     createUser=async({name,email,password}:any):Promise<void>=>{
-
+        // console.log(name,email,password);
+        
         if(!name||!email||!password){
             throw new Error("Body invalid! name or email or password");
         }
@@ -12,11 +13,14 @@ export class UserBusiness{
         const id = Date.now().toString()
 
         const userDatabase = new UserDatabase()
-        await userDatabase.create({
+
+       const user= await userDatabase.createUser({
             id,
             name,
             email,
             password
         })
+        console.log(user);
+        
     }
 }

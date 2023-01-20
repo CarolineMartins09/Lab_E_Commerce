@@ -8,11 +8,11 @@ export abstract class BaseDatabase {
   protected static connection = knex({
         client: "mysql",
         connection: {
-          host: process.env.DATABASE_HOST,
+          host: process.env.DB_HOST,
           port: 3306,
-          user: process.env.DATABASE_USER,
-          password: process.env.DATABASE_PASSWORD,
-          database: process.env.DATABASE_DATABASE,
+          user: process.env.DB_USER,
+          password: process.env.DB_PASSWORD,
+          database: process.env.DB_NAME,
           multipleStatements:true
         }
       })

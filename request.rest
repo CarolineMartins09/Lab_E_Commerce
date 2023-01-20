@@ -1,4 +1,7 @@
-POST localhost:3003/user/create
+GET http://localhost:3003/ping
+
+###
+POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
@@ -6,3 +9,7 @@ Content-Type: application/json
     "email":"teste@example.com",
     "password": "123456"
 }
+
+###
+
+

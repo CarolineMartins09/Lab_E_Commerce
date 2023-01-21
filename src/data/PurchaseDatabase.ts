@@ -21,4 +21,5 @@ export class PurchaseDatabase extends BaseDatabase{
         }
 
     }
+   
 }

@@ -29,4 +29,10 @@ export class ProductDataBase extends BaseDatabase{
             throw new Error(`${e.message}  erro user base`);
         }
     }
+
+    price =async(productId:any)=>{
+        await ProductDataBase.connection.raw(`
+            SELECT price FROM ${ProductDataBase.TABLE_NAME} WHERE ${productId}
+        `)
+    }
 }

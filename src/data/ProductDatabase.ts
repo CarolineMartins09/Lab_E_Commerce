@@ -17,4 +17,16 @@ export class ProductDataBase extends BaseDatabase{
             throw new Error(`${e.message}  erro user base`);
         }
     }
+
+    
+    getAll = async () => {
+        try {
+
+            const result = await ProductDataBase.connection.select().from(ProductDataBase.TABLE_NAME)
+
+            return (result)
+        } catch (e: any) {
+            throw new Error(`${e.message}  erro user base`);
+        }
+    }
 }

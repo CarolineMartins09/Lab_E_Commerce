@@ -9,4 +9,6 @@ app.use("",userRouter);
 
 app.use("", productRouter);
 
+app.use("", productRouter);
+
 app.get("/ping", ping)

@@ -15,4 +15,17 @@ export class ProductController {
             res.status(400).send(`${err.message}`)
         }
     }
-}
+
+    getAllProducts = async(req:Request, res:Response)=>{
+        try{
+       
+
+        const productBusiness = new ProductBusiness()
+
+       const products= await productBusiness.getAllProducts()
+
+            res.status(200).send(products)
+        }catch(err:any){
+            res.status(400).send(`${err.message}`)
+    }
+}}

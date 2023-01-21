@@ -28,4 +28,8 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3003/products
+Content-Type: application/json
+
+###
 

@@ -21,8 +21,18 @@ export class ProductBusiness{
     
         }catch(err:any){
             throw new Error(err.message);
+        }   
+    }
+
+    getAllProducts = async () =>{
+        try{
+            const productsDatabase = new ProductDataBase()
+            const products = await productsDatabase.getAll()
+
+            return products
+
+        }catch(err){
+            throw new Error(err.message);
         }
-       
-        
     }
 }

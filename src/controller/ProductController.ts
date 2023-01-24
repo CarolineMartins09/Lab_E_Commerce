@@ -25,8 +25,6 @@ export class ProductController {
 
     getAllProducts = async (req: Request, res: Response) => {
         try {
-
-
             const productBusiness = new ProductBusiness()
 
             const products = await productBusiness.getAllProducts()

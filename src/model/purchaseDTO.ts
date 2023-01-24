@@ -9,5 +9,5 @@ export interface InsertPurchaseDTO{
     userId:string,
     productId:string, 
     qty:number,
-    soma:number
+    totalPrice:number
 }

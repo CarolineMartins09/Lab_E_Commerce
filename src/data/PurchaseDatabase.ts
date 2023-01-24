@@ -1,10 +1,12 @@
+import { CustomError } from "../error/CustomError";
+import { InsertPurchaseDTO } from "../model/purchaseDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
-export class PurchaseDatabase extends BaseDatabase{
+export class PurchaseDatabase extends BaseDatabase {
     private static TABLE_NAME = "labecommerce_purchases";
 
 
-    create=async({id, userId, productId, qty,soma}:any)=>{
+    create = async ({ id, userId, productId, qty, totalPrice }: InsertPurchaseDTO) => {
         try {
 
             await PurchaseDatabase.connection.insert({
@@ -12,14 +14,14 @@ export class PurchaseDatabase extends BaseDatabase{
                 user_id: userId,
                 product_id: productId,
                 quantity: qty,
-                total_price: soma
-                
+                total_price: totalPrice
+
             }).into(PurchaseDatabase.TABLE_NAME)
 
-        } catch (e: any) {
-            throw new Error(`${e.message}  erro purchase`);
+        } catch (err: any) {
+            throw new CustomError(err.statusCode, err.message)
         }
 
     }
-   
+
 }

@@ -2,8 +2,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name": "teste 4",
-    "email":"teste2@example.com",
+    "name": "Ana Bananinha",
+    "email":"banana2@example.com",
     "password": "1234567"
 }
 
@@ -18,8 +18,8 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Mac book",
-    "price": 4242,
+    "name": "Mac",
+    "price": 422,
     "imageUrl":"https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
 }
 
@@ -35,5 +35,5 @@ Content-Type: application/json
 {
     "userId": "1674239038392",
     "productId": "1674323394909",
-    "qty": "3"
+    "qty": "7"
 }

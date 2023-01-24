@@ -17,7 +17,7 @@ export class PurchaseBusiness {
 
             const priceProduct = await productDatabase.price(productId)
 
-            const soma = priceProduct.price * qty
+            const totalPrice = priceProduct.price * qty
 
             const id = generateId()
 
@@ -28,7 +28,7 @@ export class PurchaseBusiness {
                 userId: userId,
                 productId: productId,
                 qty: qty,
-                soma: soma
+                totalPrice: totalPrice
             }
             await purchaseDatabase.create(createPurchase)
         } catch (err: any) {

@@ -19,7 +19,7 @@ Content-Type: application/json
 
 {
     "name": "Mac book",
-    "price": 10000,
+    "price": 4242,
     "imageUrl":"https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
 }
 

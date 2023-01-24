@@ -22,6 +22,7 @@ export class PurchaseBusiness {
             const id = generateId()
 
             const purchaseDatabase = new PurchaseDatabase()
+            
             const createPurchase: InsertPurchaseDTO = {
                 id: id,
                 userId: userId,

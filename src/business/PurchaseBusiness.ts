@@ -1,39 +1,37 @@
-import { BaseDatabase } from "../data/BaseDatabase";
 import { ProductDataBase } from "../data/ProductDatabase";
 import { PurchaseDatabase } from "../data/PurchaseDatabase";
-import { InputPurchaseDTO } from "../model/purchaseDTO";
+import { CustomError } from "../error/CustomError";
+import { InputPurchaseDTO, InsertPurchaseDTO } from "../model/purchaseDTO";
 import { generateId } from "../services/idGenerator";
 
-export class PurchaseBusiness{
+export class PurchaseBusiness {
 
-    createPurchase =async ({userId, productId, qty}:InputPurchaseDTO)=>{
-        try{
-            
-            if(!userId || !productId || !qty){
-                throw new Error("Body invalid! userId or productId or qty");
+    createPurchase = async ({ userId, productId, qty }: InputPurchaseDTO) => {
+        try {
+
+            if (!userId || !productId || !qty) {
+                throw new CustomError(400, "Body invalid! userId or productId or qty.");
             }
-           
+
             const productDatabase = new ProductDataBase()
 
-            const priceProduct:any= await productDatabase.price(productId)
-            // console.log(priceProduct);
-            
-            const soma:any = priceProduct.price*qty
-            console.log(priceProduct.price);
-        
+            const priceProduct = await productDatabase.price(productId)
+
+            const soma = priceProduct.price * qty
+
             const id = generateId()
 
             const purchaseDatabase = new PurchaseDatabase()
-    
-            await purchaseDatabase.create({
-                id:id,
-                userId:userId,
-                productId:productId,
-                qty:qty,
-                soma:soma
-            })
-        }catch(e:any){
-            throw new Error(e.message);
+            const createPurchase: InsertPurchaseDTO = {
+                id: id,
+                userId: userId,
+                productId: productId,
+                qty: qty,
+                soma: soma
+            }
+            await purchaseDatabase.create(createPurchase)
+        } catch (err: any) {
+            throw new CustomError(err.statusCode, err.message)
         }
     }
 }

@@ -1,4 +1,3 @@
-
 import { ProductDataBase } from "../data/ProductDatabase";
 import { CreateProductDTO, InputProductDTO } from "../model/productDTO";
 import { generateId } from "../services/idGenerator";

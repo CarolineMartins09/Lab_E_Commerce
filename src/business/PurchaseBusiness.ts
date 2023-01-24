@@ -16,10 +16,10 @@ export class PurchaseBusiness{
             const productDatabase = new ProductDataBase()
 
             const priceProduct:any= await productDatabase.price(productId)
-            console.log(priceProduct);
+            // console.log(priceProduct);
             
-            const soma:any = priceProduct*qty
-            console.log(soma);
+            const soma:any = priceProduct.price*qty
+            console.log(priceProduct.price);
         
             const id = generateId()
 

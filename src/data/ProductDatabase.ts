@@ -31,8 +31,9 @@ export class ProductDataBase extends BaseDatabase{
     }
 
     price =async(productId:string)=>{
-        await ProductDataBase.connection.raw(`
+      const result=  await ProductDataBase.connection.raw(`
             SELECT price FROM ${ProductDataBase.TABLE_NAME} WHERE ${productId}
         `)
+        return (result[0][0])
     }
 }

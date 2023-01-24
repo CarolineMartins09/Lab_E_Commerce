@@ -1,4 +1,5 @@
 import { ProductDataBase } from "../data/ProductDatabase";
+import { CustomError } from "../error/CustomError";
 import { CreateProductDTO, InputProductDTO } from "../model/productDTO";
 import { generateId } from "../services/idGenerator";
 
@@ -7,7 +8,7 @@ export class ProductBusiness {
     createProduct = async ({ name, price, imageUrl }: InputProductDTO): Promise<void> => {
         try {
             if (!name || !price || !imageUrl) {
-                throw new Error("Body invalid! name or price or imageUrl.");
+                throw new CustomError(400, "Body invalid! name or price or imageUrl.");
             }
 
             const id = generateId()
@@ -24,7 +25,7 @@ export class ProductBusiness {
             await productDatabase.create(product)
 
         } catch (err: any) {
-            throw new Error(err.message);
+            throw new CustomError(err.statusCode, err.message)
         }
     }
 
@@ -36,7 +37,7 @@ export class ProductBusiness {
             return products
 
         } catch (err) {
-            throw new Error(err.message);
+            throw new CustomError(err.statusCode, err.message)
         }
     }
 }

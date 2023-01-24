@@ -30,7 +30,7 @@ export class ProductDataBase extends BaseDatabase{
         }
     }
 
-    price =async(productId:any)=>{
+    price =async(productId:string)=>{
         await ProductDataBase.connection.raw(`
             SELECT price FROM ${ProductDataBase.TABLE_NAME} WHERE ${productId}
         `)

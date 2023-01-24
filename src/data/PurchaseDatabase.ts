@@ -24,4 +24,15 @@ export class PurchaseDatabase extends BaseDatabase {
 
     }
 
+    getAll = async () => {
+        try {
+
+            const result = await PurchaseDatabase.connection.select().from(PurchaseDatabase.TABLE_NAME)
+
+            return (result)
+        } catch (err: any) {
+            throw new CustomError(err.statusCode, err.message)
+        }
+    }
+
 }

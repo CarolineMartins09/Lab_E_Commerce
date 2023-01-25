@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ###
-GET  http://localhost:3003/user/1674239038392/purchase
+GET  http://localhost:3003/user/1674244978359/purchase
 Content-Type: application/json
 
 # f9100837-8fc4-4131-a8a4-8ce008c69214

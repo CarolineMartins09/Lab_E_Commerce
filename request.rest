@@ -1,12 +1,9 @@
-GET http://localhost:3003/ping
-
-###
 POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name": "teste 4",
-    "email":"teste2@example.com",
+    "name": "Ana Bananinha",
+    "email":"banana2@example.com",
     "password": "1234567"
 }
 
@@ -17,5 +14,32 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:3003/products
+Content-Type: application/json
 
+{
+    "name": "Mac",
+    "price": 422,
+    "imageUrl":"https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
 
+###
+
+GET http://localhost:3003/products
+Content-Type: application/json
+
+###
+POST  http://localhost:3003/purchase
+Content-Type: application/json
+
+{
+    "userId": "f9100837-8fc4-4131-a8a4-8ce008c69214",
+    "productId": "1674323394909",
+    "qty": "7"
+}
+
+###
+GET  http://localhost:3003/user/1674239038392/purchase
+Content-Type: application/json
+
+# f9100837-8fc4-4131-a8a4-8ce008c69214

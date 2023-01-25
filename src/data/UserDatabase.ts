@@ -1,9 +1,11 @@
+import { CustomError } from "../error/CustomError";
+import { CreateUserDTO } from "../model/userDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDatabase extends BaseDatabase {
     private static TABLE_NAME = "labecommerce_users";
 
-    createUser = async ({ id, name, email, password }: any) => {
+    createUser = async ({ id, name, email, password }:CreateUserDTO ) => {
         try {
 
             await UserDatabase.connection.insert({
@@ -13,8 +15,8 @@ export class UserDatabase extends BaseDatabase {
                 password: password
             }).into(UserDatabase.TABLE_NAME)
 
-        } catch (e: any) {
-            throw new Error(`${e.message}  erro user base`);
+        } catch (err: any) {
+            throw new CustomError(err.statusCode, err.message)
         }
     }
 
@@ -24,8 +26,8 @@ export class UserDatabase extends BaseDatabase {
             const result = await UserDatabase.connection.select().from(UserDatabase.TABLE_NAME)
 
             return (result)
-        } catch (e: any) {
-            throw new Error(`${e.message}  erro user base`);
+        } catch (err: any) {
+            throw new CustomError(err.statusCode, err.message)
         }
     }
 }

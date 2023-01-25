@@ -24,12 +24,18 @@ export class PurchaseDatabase extends BaseDatabase {
 
     }
 
-    getAll = async () => {
+    getAll = async (user_id:string) => {
         try {
+            // const result = await PurchaseDatabase.connection.raw(`
+            //     SELECT * FROM ${PurchaseDatabase.TABLE_NAME} WHERE user_id=${user_id}
+            // `)
 
-            const result = await PurchaseDatabase.connection.select().from(PurchaseDatabase.TABLE_NAME)
+            const result = await PurchaseDatabase.connection.select()
+            .from(PurchaseDatabase.TABLE_NAME)
+            .where({user_id:user_id})
 
-            return (result)
+            return (result[0])
+            
         } catch (err: any) {
             throw new CustomError(err.statusCode, err.message)
         }

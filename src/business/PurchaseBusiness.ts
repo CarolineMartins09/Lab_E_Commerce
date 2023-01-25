@@ -35,4 +35,19 @@ export class PurchaseBusiness {
             throw new CustomError(err.statusCode, err.message)
         }
     }
+
+    getAllPurchase=async(user_id:any)=>{
+        try{
+
+            const purchaseDatabase = new PurchaseDatabase()
+
+            const userPurchase = await purchaseDatabase.getAll(user_id)
+
+            return (userPurchase)
+
+        }catch(err){
+            throw new CustomError(err.statusCode, err.message)
+        }
+
+    }
 }

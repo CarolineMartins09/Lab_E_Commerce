@@ -13,3 +13,5 @@ app.use("", productRouter);
 
 app.use("", purchaseRouter);
 
+app.use("/user", purchaseRouter);
+

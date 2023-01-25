@@ -21,4 +21,18 @@ export class PurchaseController {
             res.status(err.statusCode || 400).send(err.message || err.sqlMessage)
         }
     }
+
+    getAllPurchase = async (req: Request, res: Response) => {
+        try {
+            const user_id = req.params.user_id as string;
+
+            const purchaseBusiness = new PurchaseBusiness()
+
+            const userPurchase = await purchaseBusiness.getAllPurchase(user_id)
+
+            res.status(200).send(userPurchase)
+        } catch (err: any) {
+            res.status(err.statusCode || 400).send(err.message || err.sqlMessage)
+        }
+    }
 }

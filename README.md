@@ -7,3 +7,8 @@ Projeto backend sistema Ecommerce
 ✅ Busca por todos usuários;
 ✅ Cadastro de produtos;
 ✅ Busca de produtos;
+✅ Registro de compra;
+✅ Busca de compras por um usuário
+
+---
+

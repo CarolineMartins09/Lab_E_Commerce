@@ -42,7 +42,11 @@ export class PurchaseBusiness {
             const purchaseDatabase = new PurchaseDatabase()
 
             const userPurchase = await purchaseDatabase.getAll(user_id)
-
+            console.log(userPurchase);
+            
+            if(!userPurchase){
+                throw new CustomError(404, "ID inválido.");
+            }
             return (userPurchase)
 
         }catch(err){

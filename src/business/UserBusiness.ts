@@ -36,6 +36,7 @@ export class UserBusiness{
     getAllUsers = async () =>{
         try{
             const userDatabase = new UserDatabase()
+            
             const user = await userDatabase.getAll()
 
             return user
